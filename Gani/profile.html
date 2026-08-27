@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganeswari| Personal Portfolio</title>
+
+    <style>
+        /* =========================
+           GENERAL STYLING
+        ========================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+        nav {
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 8%;
+            background: linear-gradient(135deg, #1f2937, #374151);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #38bdf8;
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        /* =========================
+           COMMON SECTION STYLE
+        ========================== */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1f2937;
+        }
+
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+        .about-container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* =========================
+           SKILLS SECTION
+        ========================== */
+        .skills {
+            background-color: white;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-box {
+            background-color: #f4f6f8;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        /* =========================
+           PROJECTS SECTION
+        ========================== */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+        .contact {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* =========================
+           TABLET RESPONSIVE DESIGN
+        ========================== */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+        ========================== */
+        @media (max-width: 480px) {
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">MyPortfolio</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME / HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>P.GANESWARI</span></h1>
+
+            <h2>Computer Science Professional</h2>
+
+            <p>
+                Welcome to my personal portfolio. I am passionate about
+                programming, web development, data structures, and technology.
+                Explore my skills and projects below.
+            </p>
+
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container">
+            <p>
+                I am a Computer Science professional with an interest in
+                software development and web technologies. I enjoy learning
+                new technologies, solving programming problems, and developing
+                useful applications.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to continuously improve my technical skills and
+                contribute to innovative projects in the field of technology.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Java</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">Git & GitHub</div>
+            <div class="skill-box">Problem Solving</div>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A responsive personal portfolio website developed using
+                    HTML and CSS to showcase skills, projects, and contact
+                    information.
+                </p>
+
+                <a href="#">View Project</a>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Student Management System</h3>
+
+                <p>
+                    A project designed to manage student details such as
+                    registration, academic information, and records.
+                </p>
+
+                <a href="#">View Project</a>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Web Application</h3>
+
+                <p>
+                    A responsive web application created using modern web
+                    development technologies and user-friendly design.
+                </p>
+
+                <a href="#">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <p>Email: pendemGaneswari@gmail.com</p>
+
+        <p>
+            GitHub:
+            <a href="#">github.com/ganeswari</a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="#">linkedin.com/in/ganeswari</a>
+        </p>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 ganeswari. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
